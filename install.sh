@@ -1,10 +1,12 @@
-#
-# heimdall
+# DEV ONLY FOR LAN !!
+# heimdall 666
 # dockprom
 # portainer
 #
 #
 #
+
+cd /root
 
 docker rm -f $(docker ps -a -q); docker rmi $(docker images -q)
 
