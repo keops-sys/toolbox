@@ -20,6 +20,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock # So that Traefik can listen to the Docker events
       - /data/traefik/traefik.toml:/traefik.toml
     restart: "always"
+    
    volumes:
       - /var/run/docker.sock:/var/run/docker.sock # So that Traefik can listen to the Docker events
       - /data/traefik/traefik.toml:/traefik.toml
