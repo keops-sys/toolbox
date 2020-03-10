@@ -1,32 +1,25 @@
-version: "3.3"
-
 services:
-
   traefik:
-    image: "traefik:v2.1"
-    container_name: "traefik"
-    command:
-      #- "--log.level=DEBUG"
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.websecure.address=:443"
-      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
-      #- "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
-      - "--certificatesresolvers.myresolver.acme.email=admin@keops.io"
-      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    image: traefik
     ports:
-      - "443:443"
-      - "8080:8080"
-    volumes:
-      - "./letsencrypt:/letsencrypt"
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-
-  whoami:
-    image: "containous/whoami"
-    container_name: "simple-service"
+      # only expose https to outside world
+      - "443:443"   # SSL
+    expose:
+      # traefik dashboard port
+      - 8080
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`whoami.keops.io`)"
-      - "traefik.http.routers.whoami.entrypoints=websecure"
-      - "traefik.http.routers.whoami.tls.certresolver=myresolver"
+      traefik.enable: true
+      traefik.frontend.rule: "Host:traefik.keops.io"
+      # get md5 from htpasswd or http://www.htaccesstools.com/htpasswd-generator/
+      # and then double all $ to $$ to avoid docker-compose 
+      traefik.frontend.auth.basic: "admin:$$apr1$$hq9tfroy$$nItMMo8rNqXJwPYiWejkh."
+      traefik.port: 8080
+   volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # So that Traefik can listen to the Docker events
+      - /data/traefik/traefik.toml:/traefik.toml
+    restart: "always"
+   volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # So that Traefik can listen to the Docker events
+      - /data/traefik/traefik.toml:/traefik.toml
+      - /data/traefik/acme.json:/acme.json
+    restart: "always"
