@@ -1,3 +1,6 @@
+docker stop runner
+docker rm runner
+
 docker pull drone/drone:1
 
 export DRONE_GITHUB_CLIENT_ID=4f6ccc6c5ae6a070a911
@@ -20,3 +23,18 @@ docker run \
   --detach=true \
   --name=drone \
   drone/drone:1
+
+
+  docker pull drone/drone-runner-docker:1
+
+  docker run -d \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -e DRONE_RPC_PROTO=http \
+  -e DRONE_RPC_HOST={{DRONE_SERVER_HOST}} \
+  -e DRONE_RPC_SECRET={{DRONE_RPC_SECRET}} \
+  -e DRONE_RUNNER_CAPACITY=2 \
+  -e DRONE_RUNNER_NAME=${HOSTNAME} \
+  -p 3000:3000 \
+  --restart always \
+  --name runner \
+  drone/drone-runner-docker:1
