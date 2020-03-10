@@ -1,0 +1,140 @@
+/* ==========================================================================
+Template Name 	: PiuPiu Documentation
+Author				: Simplesphere - Anoop Jeewoolall
+Theme Url 			: http://websites.simplesphere.net/piupiu/
+Description		: Flexible One Page Template for Freelancers / Agencies
+Website				: http://www.simplesphere.net
+ ========================================================================== */ 
+
+/* ==========================================================================
+Basic Styling
+ ========================================================================== */ 
+body { width: 100%; height: 100%; font-family: "Raleway", Lucida Sans Unicode, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+html { width: 100%; height: 100%;}
+
+h1, h2, h3, h4, h5, h6 { margin: 0 0 35px; font-family: Montserrat,"Helvetica Neue", Helvetica,Arial,sans-serif; font-weight: 700; }
+h1, h2, h3, h4, h5, h6 { margin-top: 0;  margin-bottom: 10px;}
+
+p { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 14px; line-height: 28px; margin-bottom: 20px; }
+
+a, a:visited { -webkit-transition: all 150ms ease-in; -moz-transition: all 150ms ease-in; -o-transition: all 150ms ease-in; transition: all 150ms ease-in;}
+a { color: #00a8d6; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; transition: all .2s ease-in-out;}
+a:hover,
+a:focus { text-decoration: none; color: #007DA0; outline: none; } 
+
+ul { margin: 0; padding: 0; list-style: none;}
+ul li {line-height: 28px;}
+
+::-moz-selection { text-shadow: none; background: #1F1F1F; color: #FFF;}
+::selection { text-shadow: none; background: #1F1F1F; color: #FFF; }
+
+img::selection { background: 0 0;}
+img::-moz-selection { background: 0 0;}
+
+hr {margin: 30px 0; border-top: 1px solid #DDD;}
+body { webkit-tap-highlight-color: rgba(255,255,255,.2);}
+
+/* ==========================================================================
+Classes
+ ========================================================================== */ 
+.headline {text-align: center;}
+	.headline h1 {color: #31373a; padding-bottom: 15px; border-bottom: 2px solid #DDD; display: inline-block;}
+	.headline p {margin-bottom: 50px;}
+
+.white h1 {color: #FFF;}
+.white p {color: #FFF;}
+
+.section {padding: 100px 0;}
+
+.padding70top {padding-top: 70px;}
+
+.bordered {border:1px solid #DDD;}
+.border-left {border-left: 1px solid #DDD;}
+.border-right {border-right: 1px solid #DDD;}
+.border-top {border-top: 1px solid #DDD;}
+.border-bottom {border-bottom: 1px solid #DDD;}
+.nopadding-bottom {padding-bottom: 0;}
+
+.divider70 {clear: both; height: 70px;}
+.divider20 {clear: both; height: 20px;}
+.divider35 {clear: both; height: 35px;}
+
+.btn {-webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+.blue-btn { padding: 12px 15px; font-size: 12px; font-family: "Raleway", sans-serif; text-transform: uppercase; font-weight: 700; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px; border-radius: 2px; background-color: #00a8d6; color: white;}
+.blue-btn:hover { background-color: #31373a; color: #FFF;}
+
+.tick-list {margin: 15px 0;}
+.tick-list li {list-style: none; margin-bottom: 10px;}
+.tick-list li i {margin-right: 10px; color: #00a8d6;}
+
+.quote {color: #FFF; border: none; font-size: 40px; text-align: center; position: relative; font-weight: bold;}
+.quote::before{  font-family:'FontAwesome'; content:"\f10d"; font-size: 20px; font-weight: bold; padding-right: 30px; font-weight: normal; }
+.quote span {display: block; font-size: 16px; }
+
+.text-center img {display: block; margin: 0 auto;}
+
+/* ==========================================================================
+Color Customizations
+ ========================================================================== */ 
+.bg-white {background-color: #FFF;}
+.bg-grey {background-color: #F8F8F8;}
+.bg-grey2 {background-color: #F5F5F5;}
+
+.bg-blue {background-color: #00a8d6;}
+
+.testimonial-bg {background:url(../img/testimonial-bg.jpg) no-repeat center center fixed; }
+.bg-stats {background: url(../img/about-bg.jpg) no-repeat center center fixed; }
+.bg-ipad {background: url(../img/ipad-bg.jpg) no-repeat center center fixed;}
+.bg-notebook {background: url(../img/notebook-bg.jpg) no-repeat center center fixed;}
+
+.bg-grey-pattern {background: url(../img/grey-pattern.jpg);}
+
+.cover {-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; background-size: cover; }
+
+.color-blue {color: #00a8d6;}
+.color-white {color: #FFF;}
+
+.overlay-bg {position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.5; background: rgba(0, 0, 0, 0.5); background: -webkit-radial-gradient(50% 55%, ellipse closest-corner, rgba(0, 0, 0, 0.57) 1%, rgba(0, 0, 0, 0.8) 100%); background:-moz-radial-gradient(50% 55%, ellipse closest-corner, rgba(0, 0, 0, 0.57) 1%, rgba(0, 0, 0, 0.8) 100%); background: -ms-radial-gradient(50% 55%, ellipse closest-corner, rgba(0, 0, 0, 0.57) 1%, rgba(0, 0, 0, 0.8) 100%); background: radial-gradient(50% 55%, ellipse closest-corner, rgba(0, 0, 0, 0.57) 1%, rgba(0, 0, 0, 0.8) 100%); -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); z-index: 0;}
+
+
+
+.page-header h1 small {font-size: 17px;}
+.tab-content {padding-top: 30px;}
+
+.jumbotron h1, .jumbotron .h1 {font-size: 50px; text-align: center;}
+.jumbotron p {font-size: 15px;}
+
+.descrip li {margin-bottom: 15px; line-height: 26px;}
+
+.bullets { padding: 0 0 30px 45px; margin: 0;}
+.bullets li {list-style-type: circle;}
+
+/* ==========================================================================
+Footer
+ ========================================================================== */
+#footer {background-color: #31373a; padding: 30px 0;}
+#footer p { color: #aaa; margin-bottom: 0;	}
+#footer a {color: #FFF;}
+
+.copyright {float: right;}
+.copyright i {color: #FF3D7F; margin:0 5px;}
+
+
+/* ---------------------------------------------------------------------- */
+/*	Media Queries (to make the layout responsive)
+/* ---------------------------------------------------------------------- */
+
+/* ------ Tablet Portrait size to standard 960 (devices and browsers) ------*/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+/* ------ Mobile Landscape Size to Tablet Portrait (devices and browsers) ------*/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+/* ------ Mobile Portrait Size to Mobile Landscape Size (devices and browsers) ------*/
+@media only screen and (max-width: 479px) {
+
+}
+
