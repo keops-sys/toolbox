@@ -24,7 +24,7 @@
     address = ":443"
 
 [certificatesResolvers.letsencrypt.acme]
-  email = "contact@computerz.solutions"
+  email = "admin@keops.io"
   storage = "acme.json"
   caServer = "https://acme-v02.api.letsencrypt.org/directory"
   keyType = "EC256"
