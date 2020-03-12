@@ -15,9 +15,9 @@ services:
       - ./traefik.toml:/etc/traefik/traefik.toml:ro
       - ./acme.json:/acme.json
     labels:
-      - "traefik.http.routers.api.rule=Host(`traefik.home.wilson.net`)"
+      - "traefik.http.routers.api.rule=Host(`traefik.keops.io`)"
       - "traefik.http.routers.api.service=api@internal"
-      - "traefik.http.routers.api.entrypoints=http"  
+      - "traefik.http.routers.api.entrypoints=http"
 #     networks:
 #       - web
 #
