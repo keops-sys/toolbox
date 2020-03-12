@@ -28,6 +28,9 @@ OnHostRule = true
 [acme.httpChallenge]
 entryPoint = "http"
 
+[[acme.domains]]
+  main = "statik.keops.io"
+
 # Enable web configuration backend
 [web]
 
