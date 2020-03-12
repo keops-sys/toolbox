@@ -1,22 +1,58 @@
-version: '3.7'
+# version: '3.7'
+# services:
+#   traefik:
+#     image: traefik:cantal
+#     container_name: traefik
+#     restart: always
+#     ports:
+#       - 80:80
+#       - 443:443
+#       - 8080:8080
+#     volumes:
+#       - /etc/localtime:/etc/localtime:ro
+#       - /etc/timezone:/etc/timezone:ro
+#       - /var/run/docker.sock:/var/run/docker.sock:ro
+#       - ./traefik.toml:/etc/traefik/traefik.toml:ro
+#       - ./acme.json:/acme.json
+#     networks:
+#       - web
+#
+# networks:
+#   web:
+#     external: true
+version: '3'
+
 services:
   traefik:
-    image: traefik:cantal
+    image: traefik:v2.0
     container_name: traefik
-    restart: always
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - proxy
     ports:
       - 80:80
       - 443:443
-      - 8080:8080
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./traefik.toml:/etc/traefik/traefik.toml:ro
+      - ./traefik.yml:/traefik.yml:ro
       - ./acme.json:/acme.json
-    networks:
-      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.entrypoints=http"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.example.com`)"
+      - "traefik.http.middlewares.traefik-auth.basicauth.users=USER:PASSWORD"
+      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
+      - "traefik.http.routers.traefik-secure.entrypoints=https"
+      - "traefik.http.routers.traefik-secure.rule=Host(`traefik.example.com`)"
+      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
+      - "traefik.http.routers.traefik-secure.tls=true"
+      - "traefik.http.routers.traefik-secure.tls.certresolver=http"
+      - "traefik.http.routers.traefik-secure.service=api@internal"
 
 networks:
-  web:
+  proxy:
     external: true
