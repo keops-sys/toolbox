@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   traefik:
-    image: traefik:v1.7.16
+    image: traefik:cantal
     restart: always
     ports:
       - 80:80

@@ -28,5 +28,5 @@
   storage = "acme.json"
   caServer = "https://acme-v02.api.letsencrypt.org/directory"
   keyType = "EC256"
-[certificatesResolvers.letsencrypt.acme.httpChallenge]
-  entryPoint = "http"
+  [certificatesResolvers.letsencrypt.acme.httpChallenge]
+    entryPoint = "http"
