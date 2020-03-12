@@ -2,7 +2,7 @@
   sendAnonymousUsage = false
 
 [log]
-  level = "INFO"
+  level = "WARNING"
   format = "common"
 
 [providers]
@@ -20,6 +20,7 @@
 [entryPoints]
   [entryPoints.insecure]
     address = ":80"
+    
   [entryPoints.secure]
     address = ":443"
 
