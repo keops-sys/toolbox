@@ -1,40 +1,26 @@
-# version: '3.7'
-# services:
-#   traefik:
-#     image: traefik:v2.0
-#     container_name: traefik
-#     restart: always
-#     ports:
-#       - 80:80
-#       - 443:443
-#       - 8080:8080
-#     volumes:
-#       - /etc/localtime:/etc/localtime:ro
-#       - /etc/timezone:/etc/timezone:ro
-#       - /var/run/docker.sock:/var/run/docker.sock:ro
-#       - ./traefik.toml:/etc/traefik/traefik.toml:ro
-#       - ./acme.json:/acme.json
-# #     networks:
-# #       - web
-# #
-# # networks:
-# #   web:
-# #     external: true
-
-
-version: '3'
-
+version: '3.7'
 services:
-  reverse-proxy:
-    restart: always
+  traefik:
     image: traefik:v2.0
+    container_name: traefik
+    restart: always
     ports:
-    - "443:443"
-    - "80:80"
+      - 80:80
+      - 443:443
+      - 8080:8080
     volumes:
-    - /srv/traefik.toml:/etc/traefik/traefik.toml
-    - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.toml:/etc/traefik/traefik.toml:ro
+      - ./acme.json:/acme.json
     labels:
-    - "traefik.http.routers.api.rule=Host(`traefik.home.wilson.net`)"
-    - "traefik.http.routers.api.service=api@internal"
-    - "traefik.http.routers.api.entrypoints=http"
+      - "traefik.http.routers.api.rule=Host(`traefik.home.wilson.net`)"
+      - "traefik.http.routers.api.service=api@internal"
+      - "traefik.http.routers.api.entrypoints=http"  
+#     networks:
+#       - web
+#
+# networks:
+#   web:
+#     external: true
