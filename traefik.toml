@@ -4,27 +4,21 @@
 [log]
   level = "WARNING"
 
-[providers]
-  [providers.docker]
-    endpoint = "unix:///var/run/docker.sock"
-    watch = true
-    exposedByDefault = true
-    swarmMode = false
-
 [entryPoints]
-  [entryPoints.insecure]
+  [entryPoints.http]
   address = ":80"
-
-  [entryPoints.secure]
+  [entryPoints.https]
   address = ":443"
 
 [api]
 
+[providers.docker]
+  endpoint = "unix:///var/run/docker.sock"
 
-[certificatesResolvers.letsencrypt.acme]
-  email = "admin@keops.io"
-  storage = "acme.json"
-  caServer = "https://acme-v02.api.letsencrypt.org/directory"
-  keyType = "EC256"
-  [certificatesResolvers.letsencrypt.acme.httpChallenge]
-    entryPoint = "http"
+# [certificatesResolvers.letsencrypt.acme]
+#   email = "admin@keops.io"
+#   storage = "acme.json"
+#   caServer = "https://acme-v02.api.letsencrypt.org/directory"
+#   keyType = "EC256"
+#   [certificatesResolvers.letsencrypt.acme.httpChallenge]
+#     entryPoint = "http"
