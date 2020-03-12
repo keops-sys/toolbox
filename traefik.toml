@@ -1,38 +1,32 @@
-debug = false
+[global]
+  sendAnonymousUsage = false
 
-defaultEntryPoints = ["https","http"]
+[log]
+  level = "INFO"
+  format = "common"
 
-# The syntax is somewhat esoteric IMHO so this is mostly copy-paste
+[providers]
+  [providers.docker]
+    endpoint = "unix:///var/run/docker.sock"
+    watch = true
+    exposedByDefault = true
+    swarmMode = false
+
+[api]
+  dashboard = true
+  debug = false
+  insecure = true
+
 [entryPoints]
-  [entryPoints.http]
-  address = ":80"
-    [entryPoints.http.redirect]
-    entryPoint = "https"
-  [entryPoints.https]
-  address = ":443"
-  [entryPoints.https.tls]
+  [entryPoints.insecure]
+    address = ":80"
+  [entryPoints.secure]
+    address = ":443"
 
-[retry]
-
-[docker]
-endpoint = "unix:///var/run/docker.sock"
-domain = "traefik.keops.io"
-watch = true
-exposedbydefault = false
-
-[acme]
-email = "admin@keops.io"
-storage = "acme.json"
-entryPoint = "https"
-OnHostRule = true
-[acme.httpChallenge]
-entryPoint = "http"
-
-[[acme.domains]]
-  main = "statik.keops.io"
-
-# Enable web configuration backend
-[web]
-
-# Web administration port, proxied in docker-compose.yml
-address = ":8080"
+[certificatesResolvers.letsencrypt.acme]
+  email = "contact@computerz.solutions"
+  storage = "acme.json"
+  caServer = "https://acme-v02.api.letsencrypt.org/directory"
+  keyType = "EC256"
+[certificatesResolvers.letsencrypt.acme.httpChallenge]
+  entryPoint = "http"
