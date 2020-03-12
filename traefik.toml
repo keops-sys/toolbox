@@ -8,3 +8,9 @@
 
 [providers.docker]
   endpoint = "unix:///var/run/docker.sock"
+
+[certificatesResolvers.keops.acme]
+  email = "admin@keops.io"
+  storage = "acme.json"
+  [certificatesResolvers.keops.acme.httpChallenge]
+    entryPoint = "http"
