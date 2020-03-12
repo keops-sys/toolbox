@@ -31,3 +31,8 @@
       keyType = "EC384"
         [certificatesResolvers.letsencrypt.acme.httpChallenge]
           entryPoint = "web"
+
+
+[api]
+  entryPoint = "traefik"
+  dashboard = true
