@@ -20,7 +20,7 @@
 [entryPoints]
   [entryPoints.insecure]
     address = ":80"
-    
+
   [entryPoints.secure]
     address = ":443"
 
@@ -30,4 +30,4 @@
   caServer = "https://acme-v02.api.letsencrypt.org/directory"
   keyType = "EC256"
   [certificatesResolvers.letsencrypt.acme.httpChallenge]
-    entryPoint = "http"
+    entryPoint = "web"
