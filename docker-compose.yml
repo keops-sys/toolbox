@@ -15,5 +15,5 @@ services:
       - web
 
 networks:
-  oueb:
+  web:
     driver: bridge
