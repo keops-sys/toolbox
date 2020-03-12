@@ -11,9 +11,9 @@
     exposedByDefault = true
     swarmMode = false
 
-  [providers.file]
-    filename = "/etc/traefik/traefik_dynamic.toml"
-    watch = true
+  # [providers.file]
+  #   filename = "/etc/traefik/traefik_dynamic.toml"
+  #   watch = true
 
 [entryPoints]
   [entryPoints.web]
