@@ -18,6 +18,9 @@
   [entryPoints.secure]
   address = ":443"
 
+[api]
+
+
 [certificatesResolvers.letsencrypt.acme]
   email = "admin@keops.io"
   storage = "acme.json"
