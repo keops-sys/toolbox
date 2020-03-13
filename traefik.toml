@@ -1,3 +1,7 @@
+[log]
+  level = "INFO"
+  format = "common"
+
 [entryPoints]
   [entryPoints.http]
   address = ":80"
