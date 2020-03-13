@@ -8,9 +8,14 @@
 
 [providers.docker]
   endpoint = "unix:///var/run/docker.sock"
+  watch = true
+  exposedByDefault = true
+  swarmMode = false
 
 [certificatesResolvers.letsencrypt.acme]
-  email = "admin@keops.io"
+  email = "contact@computerz.solutions"
   storage = "acme.json"
-  [certificatesResolvers.keops.letsencrypt.httpChallenge]
+  caServer = "https://acme-v02.api.letsencrypt.org/directory"
+  keyType = "EC256"
+  [certificatesResolvers.letsencrypt.acme.httpChallenge]
     entryPoint = "http"
