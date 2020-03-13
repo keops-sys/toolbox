@@ -17,9 +17,9 @@ services:
       - "traefik.http.routers.api.rule=Host(`traefik.keops.io`)"
       - "traefik.http.routers.api.service=api@internal"
       - "traefik.http.routers.api.entrypoints=http"
-#     networks:
-#       - web
-#
-# networks:
-#   web:
-#     external: true
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
