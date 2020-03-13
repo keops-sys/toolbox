@@ -7,7 +7,7 @@
   Toolbox for Keops Servers
 </h1>
 
-[![SSL Rating](https://sslbadge.org/?domain=example.com)](https://www.ssllabs.com/ssltest/analyze.html?d=statik.keops.io)
+[![SSL Rating](https://sslbadge.org/?domain=statik.keops.io)](https://www.ssllabs.com/ssltest/analyze.html?d=statik.keops.io)
 
 
 Install Traefik (handle SSL with letsencrypt)
