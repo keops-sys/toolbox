@@ -15,6 +15,9 @@
   # watch = true
   # exposedByDefault = true
   # swarmMode = false
+[providers.file]
+  filename = "/etc/traefik/traefik_dynamic.toml"
+  watch = true
 
 [certificatesResolvers.letsencrypt.acme]
   email = "admin@keops.io"

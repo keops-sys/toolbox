@@ -13,6 +13,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik.toml:/etc/traefik/traefik.toml:ro
       - ./acme.json:/acme.json
+      - ./traefik_dynamic.toml:/etc/traefik/traefik_dynamic.toml:ro
     labels:
       - "traefik.http.routers.api.rule=Host(`traefik.keops.io`)"
       - "traefik.http.routers.api.service=api@internal"
