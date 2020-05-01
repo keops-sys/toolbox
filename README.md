@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.ctc.io">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+    <img alt="Gatsby" src="https://github.com/containous/traefik/raw/master/docs/content/assets/img/traefik.logo.png" width="60" />
   </a>
 </p>
 <h1 align="center">
