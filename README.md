@@ -12,6 +12,17 @@
 
 Install Traefik (handle SSL with letsencrypt)
 
+
+## Generate SSH key
+`ssh-keygen`
+
+Then add key to github **deploy key settings**
+
+`cat .ssh/id_rsa.pub`
+git clone git@github.com:keops-sys/toolbox.git
+
+`git clone git@github.com:keops-sys/toolbox.git`
+
 ## Start Trafeik
 
 ```./start_traefik.sh```
