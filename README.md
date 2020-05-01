@@ -22,8 +22,12 @@ Then add key to github **deploy key settings**
 
 `git clone git@github.com:keops-sys/toolbox.git`
 
+`docker network create web`
+
 ## Start Trafeik
 
+
+`cd toolbox`
 ```./start_traefik.sh```
 
 
