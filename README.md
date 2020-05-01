@@ -19,7 +19,6 @@ Install Traefik (handle SSL with letsencrypt)
 Then add key to github **deploy key settings**
 
 `cat .ssh/id_rsa.pub`
-git clone git@github.com:keops-sys/toolbox.git
 
 `git clone git@github.com:keops-sys/toolbox.git`
 
