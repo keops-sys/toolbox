@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  TRAEFIK FOR NEW KEOPS SERVER
+  Traefik for KEOPS servers
 </h1>
 
 [![SSL Rating](https://sslbadge.org/?domain=traefik.keops.io)](https://www.ssllabs.com/ssltest/analyze.html?d=traefik.keops.io)
@@ -14,6 +14,7 @@ Install Traefik (SSL with letsencrypt)
 
 
 ⚠️ Make sure dns are linked to traefik.keops.io
+
 ⚠️ Make sure to link domains of projects to server ip
 
 ## Generate SSH key
