@@ -39,6 +39,8 @@ Then add key to github **deploy key settings**
 
 ```./start.sh```
 
+🚀Visit [https://traefik.XXXXXXX.com](https://traefik.XXXXXXX.com)
+
 
 ## Kill all containers
 
