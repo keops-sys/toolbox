@@ -25,6 +25,11 @@ Then add key to github **deploy key settings**
 
 `docker network create web`
 
+## Edit configuration
+
+
+Edit host (traefik.XXXXX.com) in (docker-compose.yml)(https://github.com/keops-sys/toolbox/blob/master/docker-compose.yml)
+
 ## Start Trafeik
 
 
