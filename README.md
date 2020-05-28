@@ -30,7 +30,7 @@ Then add key to github **deploy key settings**
 
 1. Edit host **traefik.XXXXX.com** in [docker-compose.yml](https://github.com/keops-sys/toolbox/blob/master/docker-compose.yml)
 
-2. `chmod 600 acme.json
+2. `chmod 600 acme.json`
 
 ## Start Trafeik
 
