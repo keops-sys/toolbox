@@ -7,6 +7,9 @@
   Traefik for KEOPS servers
 </h1>
 
+Setup for PROD servers using docker 
+
+
 Install Traefik (SSL with letsencrypt)
 
 
