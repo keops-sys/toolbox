@@ -7,17 +7,17 @@
   Traefik for KEOPS servers
 </h1>
 
-# Setup for PROD servers using docker 
+Setup for PROD servers using docker 
+Letsencrypt + DigitalOcean + Traefik + Docker + Images (at your taste)
 
-
-Install Traefik (SSL with letsencrypt)
+# 1. Install Traefik (SSL with letsencrypt)
 
 
 ⚠️ Make sure dns are linked to traefik.keops.io
 
 ⚠️ Make sure to link domains of projects to server ip
 
-## Generate SSH key
+## 2. Generate SSH key
 `ssh-keygen`
 
 Then add key to github **deploy key settings**
@@ -28,14 +28,14 @@ Then add key to github **deploy key settings**
 
 `docker network create web`
 
-## Edit configuration
+## 3. Edit configuration
 
 
-1. Edit host **traefik.XXXXX.com** in [docker-compose.yml](https://github.com/keops-sys/toolbox/blob/master/docker-compose.yml)
+1. Edit traefik subdomain **traefik.XXXXX.com** in [docker-compose.yml](https://github.com/keops-sys/toolbox/blob/master/docker-compose.yml)
 
 2. `chmod 600 acme.json`
 
-## Start Trafeik
+## 4. Start Trafeik
 
 
 `cd toolbox`
@@ -43,6 +43,10 @@ Then add key to github **deploy key settings**
 ```./start.sh```
 
 🚀Visit [https://traefik.XXXXXXX.com](https://traefik.XXXXXXX.com)
+
+## 5. Start Trafeik
+
+Staret you container with correct docker-compose.yml
 
 
 ## Kill all containers
