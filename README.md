@@ -13,6 +13,7 @@ Letsencrypt + DigitalOcean + Traefik + Docker + Images (at your taste)
 # 1. Install Traefik (SSL with letsencrypt)
 
 
+
 ⚠️ Make sure dns are linked to traefik.keops.io
 
 ⚠️ Make sure to link domains of projects to server ip
@@ -20,7 +21,8 @@ Letsencrypt + DigitalOcean + Traefik + Docker + Images (at your taste)
 ## 2. Generate SSH key
 `ssh-keygen`
 
-Then add key to github **deploy key settings**
+Then add key to github **deploy key settings** https://github.com/settings/ssh/new
+
 
 `cat .ssh/id_rsa.pub`
 
